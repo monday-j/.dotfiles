@@ -1,0 +1,7 @@
+# Image macros, mostly used for emails out to customers where we need to identify on-site equipment
+
+matches:
+
+  # NBN FTTP NTD
+  - trigger: ":fttp"
+    image_path: "$CONFIG/images/fttp_ntd.png"

@@ -1,0 +1,11 @@
+# General autocorrect and autocapitalisation fixes
+
+match:
+
+  # Eero -> eero. No capitals!
+  - trigger: "Eero"
+    replace: "eero"
+
+  # Mikrotik/mikrotik etc -> MikroTik
+  - triggers: [mikrotik, Mikrotik, mikroTik]
+    replace: "MikroTik"
