@@ -1,5 +1,17 @@
 # My Personal .dotfiles
 
-Nothing crazy to see here. These are the .dotfiles I use to sync my shell experience across multiple systems.
+Welcome to my `.dotfiles`! 
 
-```Have fun looking around, I guess```
+This repo is just for sync purposes - making sure my configs are uniform across PCs to ensure expectable, reproducable results no matter where I am.
+
+However, I've also decided to make this repo public, in case someone stumbles across it while looking for their *own* `.dotfile` inspiration. If this is you, welcome! My stuff's fairly basic, because, well, my needs are basic. 
+
+HUGE thanks to Dreams of Autonomy for his videos on his personal configuration. His videos were a great source of inspiration for my own configs.
+- - -
+## Tools I Use
+- Oh My Posh
+- Zinit
+
+## Previous Tools
+- Oh My Zsh
+- Powerlevel10k
