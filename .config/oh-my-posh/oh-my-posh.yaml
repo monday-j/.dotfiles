@@ -28,6 +28,24 @@ blocks:
     properties:
       style: full
 
+  - type: git
+    style: simple
+    foreground: "#a6da95"
+    background: "transparent"
+    background_templates:
+      - "{{ if or (.Working.Changed) (.Staging.Changed) }}#eed49f{{ end }}"
+      - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f5a97f{{ end }}"
+      - "{{ if gt .Ahead 0 }}#c6a0f6{{ end }}"
+      - "{{ if gt .Behind 0 }}#b7bdf8{{ end }}"
+    template: "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
+      }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
+      (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
+      {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{
+      end }}"
+    properties:
+      fetch_status: true
+      fetch_upstream_icon: true
+
 - type: prompt
   alignment: right
   
