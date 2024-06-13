@@ -14,7 +14,7 @@ HUGE thanks to [Dreams of Autonomy](https://github.com/dreamsofautonomy) for his
 - [micro](https://github.com/zyedidia/micro)
 
 ## Tools I Plan on Using
-- [tmux]
+- [tmux](https://github.com/tmux/tmux)
 - Different text editor like [neovim](https://github.com/neovim/neovim) or [Doom Emacs](https://github.com/doomemacs/doomemacs)
 
 ## Previous Tools
