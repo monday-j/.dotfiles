@@ -29,10 +29,15 @@ blocks:
       style: full
 
   - type: git
-    style: simple
+    style: plain
+    foreground: "#cad3f5"
+    template: " // "
+
+  - type: git
+    style: plain
     foreground: "#a6da95"
     background: "transparent"
-    background_templates:
+    foregorund_templates:
       - "{{ if or (.Working.Changed) (.Staging.Changed) }}#eed49f{{ end }}"
       - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f5a97f{{ end }}"
       - "{{ if gt .Ahead 0 }}#c6a0f6{{ end }}"
