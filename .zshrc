@@ -57,3 +57,4 @@ setopt hist_find_no_dups
 
 # Custom aliases
 alias gcm="git-credential-manager"
+alias c="clear"
