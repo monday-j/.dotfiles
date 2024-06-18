@@ -11,11 +11,11 @@ OMP_CONFIG="$HOME/.config/oh-my-posh/oh-my-posh.yaml"
 OMP_HOME="$HOME/.local/bin/oh-my-posh"
 
 if [ -z "oh-my-posh -v" ]; then
-   mkdir -p "$(dirname $OMP_CONFIG)"
+   mkdir -p $OMP_HOME
    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $HOME/.local/bin
 fi
 
-eval "$(oh-my-posh init --config $HOME/.config/oh-my-posh/oh-my-posh.yaml zsh)"
+eval "$(oh-my-posh init --config $OMP_CONFIG zsh)"
 
 # Initialise Zinit and install if not already there
 ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
@@ -54,6 +54,17 @@ setopt hist_find_no_dups
 
 # ZSH Bindkeys
 
+# Stole these from https://superuser.com/a/1822652
+# Home & End Key to skip to start and end of lines
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
+# Del key to delete keys:
+bindkey  "^[[3~"  delete-char
+
+# Ctrl+Left/Right to jump words
+bindkey ";5D" backward-word
+bindkey ";5C" forward-word
 
 # Custom aliases
 alias gcm="git-credential-manager"
