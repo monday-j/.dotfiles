@@ -52,19 +52,24 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# ZSH Bindkeys
+# Stole these history settings from https://superuser.com/a/585004
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Bindkeys
+
+# PgUp/PgDown for smart history searching
+bindkey '^[[5~' up-line-or-beginning-search # Page Up
+bindkey '^[[6~' down-line-or-beginning-search # Page Down
 
 # Stole these from https://superuser.com/a/1822652
-# Home & End Key to skip to start and end of lines
-bindkey '^[[H' beginning-of-line
-bindkey '^[[F' end-of-line
-
-# Del key to delete keys:
-bindkey  "^[[3~"  delete-char
-
-# Ctrl+Left/Right to jump words
-bindkey ";5D" backward-word
-bindkey ";5C" forward-word
+bindkey '^[[H' beginning-of-line # Home
+bindkey '^[[F' end-of-line # End
+bindkey  "^[[3~"  delete-char # Del
+bindkey ";5D" backward-word # Ctrl + Left
+bindkey ";5C" forward-word # Ctrl + Right
 
 # Custom aliases
 alias gcm="git-credential-manager"
