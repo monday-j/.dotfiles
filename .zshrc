@@ -10,7 +10,7 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 OMP_CONFIG="$HOME/.config/oh-my-posh"
 OMP_HOME="$HOME/.local/bin/oh-my-posh"
 
-if [ ! -d "$(where oh-my-posh)" ]; then
+if ! command -v oh-my-posh &> /dev/null; then
    mkdir -p "$(dirname $OMP_CONFIG)"
    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $HOME/.local/bin
 fi
@@ -29,9 +29,10 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Zinit Plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting # Highlights syntax
+zinit light zsh-users/zsh-completions # Allows for tab-completion of many common commands
+zinit light zsh-users/zsh-autosuggestions # Fish-like autosuggestion based on command history
+zinit load jirutka/zsh-shift-select # Allows for selecting text with the shift key
 
 autoload -U compinit && compinit
 
