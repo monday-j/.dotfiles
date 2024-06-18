@@ -7,15 +7,15 @@ export GPG_TTY=$(tty)
 export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 
 # Install oh-my-posh if not already installed
-OMP_CONFIG="$HOME/.config/oh-my-posh/oh-my-posh.yaml"
+OMP_CONFIG="$HOME/.config/oh-my-posh"
 OMP_HOME="$HOME/.local/bin/oh-my-posh"
 
-if [ -z "oh-my-posh -v" ]; then
-   mkdir -p $OMP_HOME
+if [ ! -d "$(where oh-my-posh)" ]; then
+   mkdir -p "$(dirname $OMP_CONFIG)"
    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $HOME/.local/bin
 fi
 
-eval "$(oh-my-posh init --config $OMP_CONFIG zsh)"
+eval "$(oh-my-posh init --config $OMP_CONFIG/oh-my-posh.yaml zsh)"
 
 # Initialise Zinit and install if not already there
 ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
