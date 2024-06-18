@@ -32,7 +32,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting # Highlights syntax
 zinit light zsh-users/zsh-completions # Allows for tab-completion of many common commands
 zinit light zsh-users/zsh-autosuggestions # Fish-like autosuggestion based on command history
-zinit load jirutka/zsh-shift-select # Allows for selecting text with the shift key
 
 autoload -U compinit && compinit
 
