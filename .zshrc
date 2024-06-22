@@ -10,9 +10,12 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 OMP_CONFIG="$HOME/.config/oh-my-posh"
 OMP_HOME="$HOME/.local/bin/oh-my-posh"
 
-if ! command -v oh-my-posh &> /dev/null; then
-   mkdir -p "$(dirname $OMP_CONFIG)"
-   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $HOME/.local/bin
+if ! command -v oh-my-posh &> /dev/null; then # Check if Oh My Posh is installed; if it's not,
+   mkdir -p "$(dirname $OMP_CONFIG)" # Make the configuration directory
+   if [ ! -d ~/.local/bin ]; then # Check if ~/.local/bin exists
+       mkdir -p ~/.local/bin # Make it if not
+   fi
+   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $HOME/.local/bin # Install Oh My Posh
 fi
 
 eval "$(oh-my-posh init --config $OMP_CONFIG/oh-my-posh.yaml zsh)"
