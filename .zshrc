@@ -20,10 +20,6 @@ fi
 
 eval "$(oh-my-posh init --config $OMP_CONFIG/oh-my-posh.yaml zsh)"
 
-# Check for oh-my-posh update
-echo "Checking for Oh My Posh update..."
-oh-my-posh upgrade
-
 # Initialise Zinit and install if not already there
 ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
 
