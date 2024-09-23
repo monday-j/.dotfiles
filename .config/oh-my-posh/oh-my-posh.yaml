@@ -12,18 +12,18 @@ blocks:
 
   - type: session
     style: plain
-    foreground: "#b7bdf8"
-    #foreground_templates: " {{ if .Root }}#f5a97f "
+    foreground: "lightBlue"
+    #foreground_templates: " {{ if .Root }}lightRed "
     template: "{{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{ .HostName }}{{ end }}"
 
   - type: text
     style: plain
-    foreground: "#cad3f5"
+    foreground: "lightBlue"
     template: " // "
 
   - type: path
     style: plain
-    foreground: "#8aadf4"
+    foreground: "blue"
     background: 'transparent'
     template: "{{ .Path }}"
     properties:
@@ -31,18 +31,18 @@ blocks:
 
   - type: git
     style: plain
-    foreground: "#cad3f5"
+    foreground: "lightBlue"
     template: " // "
 
   - type: git
     style: plain
-    foreground: "#a6da95"
+    foreground: "green"
     background: "transparent"
     foregorund_templates:
-      - "{{ if or (.Working.Changed) (.Staging.Changed) }}#eed49f{{ end }}"
-      - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f5a97f{{ end }}"
-      - "{{ if gt .Ahead 0 }}#c6a0f6{{ end }}"
-      - "{{ if gt .Behind 0 }}#b7bdf8{{ end }}"
+      - "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}"
+      - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}lightRed{{ end }}"
+      - "{{ if gt .Ahead 0 }}magenta{{ end }}"
+      - "{{ if gt .Behind 0 }}lightBlue{{ end }}"
     template: "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
       }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
       (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
@@ -59,8 +59,8 @@ blocks:
 
   - type: executiontime
     style: plain
-    foreground: "#eed49f"
-    template: " <#fefefe></> {{ .FormattedMs }} "
+    foreground: "yellow"
+    template: " <white></> {{ .FormattedMs }} "
     properties:
       threshold: 500
       style: roundrock
@@ -75,19 +75,19 @@ blocks:
   -  type: text
      newline: true
      style: plain
-     foreground: "#a6da95"
+     foreground: "green"
      foreground_templates:
-        -  "{{if gt .Code 0}}#ed8796{{ end }}"
+        -  "{{if gt .Code 0}}red{{ end }}"
      template: '❯'      
 
 transient_prompt:
-  foreground: "#b7bdf8"
+  foreground: "lightBlue"
   background: "transparent"
   foreground_templates:
-   -  "{{if gt .Code 0}}#ed8796{{ end }}"
+   -  "{{if gt .Code 0}}red{{ end }}"
   template: '❯ '
 
 secondary_prompt:
-  foreground: "#b7bdf8"
+  foreground: "lightBlue"
   background: "transparent"
   template: '❯❯'

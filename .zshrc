@@ -15,10 +15,13 @@ if ! command -v oh-my-posh &> /dev/null; then # Check if Oh My Posh is installed
    if [ ! -d ~/.local/bin ]; then # Check if ~/.local/bin exists
        mkdir -p ~/.local/bin # Make it if not
    fi
-   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $HOME/.local/bin # Install Oh My Posh
+   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $HOME/.local/bin #Install Oh My Posh
 fi
 
 eval "$(oh-my-posh init --config $OMP_CONFIG/oh-my-posh.yaml zsh)"
+
+# Set custom prompt to prompt defined in ~/.two-line-prompt.zsh
+#source "$HOME/.two-line-prompt.zsh"
 
 # Initialise Zinit and install if not already there
 ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
@@ -35,6 +38,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting # Highlights syntax
 zinit light zsh-users/zsh-completions # Allows for tab-completion of many common commands
 zinit light zsh-users/zsh-autosuggestions # Fish-like autosuggestion based on command history
+zinit light romkatv/zsh-prompt-benchmark # Plugin to measure ZSH prompt load times
 
 autoload -U compinit && compinit
 
