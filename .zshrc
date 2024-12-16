@@ -39,6 +39,7 @@ zinit light zsh-users/zsh-syntax-highlighting # Highlights syntax
 zinit light zsh-users/zsh-completions # Allows for tab-completion of many common commands
 zinit light zsh-users/zsh-autosuggestions # Fish-like autosuggestion based on command history
 zinit light romkatv/zsh-prompt-benchmark # Plugin to measure ZSH prompt load times
+zinit light jirutka/zsh-shift-select # Plugin for shift-to-select bindkeys
 
 autoload -U compinit && compinit
 
