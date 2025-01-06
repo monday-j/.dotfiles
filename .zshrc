@@ -82,3 +82,4 @@ bindkey ";5C" forward-word # Ctrl + Right
 # Custom aliases
 alias gcm="git-credential-manager"
 alias c="clear"
+alias neofetch="fastfetch"
